@@ -19,17 +19,6 @@ console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 function randomComputer() {
   const generator = Math.floor(Math.random()*3+1);
     let computerMove;
@@ -44,8 +33,6 @@ function randomComputer() {
     }
   return computerMove;
 }
-
-
 
 
 function getWinner(player_choice, computer_choice) {
