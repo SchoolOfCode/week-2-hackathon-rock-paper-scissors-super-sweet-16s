@@ -1,7 +1,21 @@
 function startGame() {
 
   function greet() {
-    let userName = prompt("What is your name?");
+    let userName;
+    let valid_name = false;
+      while (valid_name==false) {
+      userName = prompt("What is your name?");
+      userName.toLowerCase;
+      for (let i = 0; i < userName.length; i++) {
+        if (userName[i] < "a" || userName[i] > "z") {
+          alert("Invalid name inserted, please try again.")
+          break;
+        } else {
+            valid_name = true
+        }
+      }
+    }
+    userName = userName.charAt(0).toUpperCase() + userName.slice(1);
     return userName;
   }
 
@@ -42,15 +56,6 @@ while (continue_choice==true) {
     }
   }
 
-  if (weapon === "1") {
-    alert("You chose Rock!");
-  } else if (weapon === "2") {
-    alert("You chose Paper!");
-  } else if (weapon === "3") {
-    alert("You chose Scissors!");
-  }
-
-
   function randomComputer() {
     const generator = Math.floor(Math.random() * 3 + 1);
     let computerMove;
@@ -63,6 +68,14 @@ while (continue_choice==true) {
     }
     return computerMove
   }  
+
+  if (weapon === "1") {
+    alert("You chose Rock!");
+  } else if (weapon === "2") {
+    alert("You chose Paper!");
+  } else if (weapon === "3") {
+    alert("You chose Scissors!");
+  }
 
     let computer_choice = randomComputer()
     
@@ -121,5 +134,4 @@ while (continue_choice==true) {
   } else {
     console.log(`Close race! It seems you and the computer drew this time. During the game, you earnt ${win_tally} wins, ${draw_tally} draws and ${loss_tally} losses.`)
   }
-
 }
