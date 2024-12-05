@@ -5,7 +5,7 @@ function startGame() {
     let valid_name = false;
       while (valid_name==false) {
       userName = prompt("What is your name?");
-      userName.toLowerCase;
+      userName = userName.toLowerCase();
       for (let i = 0; i < userName.length; i++) {
         if (userName[i] < "a" || userName[i] > "z") {
           alert("Invalid name inserted, please try again.")
