@@ -31,3 +31,50 @@ if (weapon === "1") {
 } else {
   alert("Invalid choice. Please refresh and try again.");
 }
+
+function randomComputer() {
+  const generator = Math.floor(Math.random() * 3 + 1);
+  let computerMove;
+  if (generator == 1) {
+    computerMove = "Rock";
+  } else if (generator == 2) {
+    computerMove = "Paper";
+  } else if (generator == 3) {
+    computerMove = "Scissors";
+  }
+  return computerMove;
+}
+
+function getWinner(player_choice, computer_choice) {
+  let payoff_table = [
+    [0, -1, 1],
+    [1, 0, -1],
+    [-1, 1, 0],
+  ];
+
+  switch (player_choice) {
+    case "Rock":
+      player_choice = 0;
+      break;
+    case "Paper":
+      player_choice = 1;
+      break;
+    case "Scissors":
+      player_choice = 2;
+      break;
+  }
+
+  switch (computer_choice) {
+    case "Rock":
+      computer_choice = 0;
+      break;
+    case "Paper":
+      computer_choice = 1;
+      break;
+    case "Scissors":
+      computer_choice = 2;
+      break;
+  }
+
+  return payoff_table[player_choice][computer_choice];
+}
