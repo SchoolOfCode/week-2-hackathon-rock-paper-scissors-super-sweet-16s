@@ -13,10 +13,10 @@ console.log("Hello, " + userName + "!");
 // console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
 //}
 
-//let response = confirm("Would you like to read the guide?"); // leaves less room for user error in
-//console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
-//if (response === "yes" || response === "Yes")
-//console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
+let response = confirm("Would you like to read the guide?"); // leaves less room for user error in
+console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
+if (response === "yes" || response === "Yes")
+  console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
 
 let weapon = prompt(
   "Choose your weapon:  1. Rock, 2. Paper, 3. Scissors. Type the number to make your choice"
