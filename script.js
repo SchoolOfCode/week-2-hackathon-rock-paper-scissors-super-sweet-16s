@@ -83,7 +83,8 @@ while (continue_choice==true) {
     let computer_choice = randomComputer()
     
     console.log("Computer chose "+computer_choice)
-
+    alert("Computer chose "+computer_choice);
+    
     function getWinner(player_choice, computer_choice) {
       let payoff_table = [
         [0, -1, 1],
@@ -120,10 +121,13 @@ while (continue_choice==true) {
 
     if (getWinner(weapon,computer_choice)==1) {
       win_tally++
+      alert("You won!");
     } else if (getWinner(weapon,computer_choice)==0) {
       draw_tally++
+      alert("You drew!");
     } else {
       loss_tally++
+      alert("You lost!");
     }
 
     continue_choice = confirm("Do you wish to play again?")
