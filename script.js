@@ -5,14 +5,17 @@ function startGame() {
     let valid_name = false;
       while (valid_name==false) {
       userName = prompt("What is your name?");
-      userName = userName.toLowerCase();
+      userName = userName.toLowerCase(); 
+      valid_name = true; // Because the loop below is checking for invalid names, this was needed so that valid names could pass
       for (let i = 0; i < userName.length; i++) {
         if (userName[i] < "a" || userName[i] > "z") {
-          alert("Invalid name inserted, please try again.")
+          alert("Invalid name inserted, please try again.");
+          valid_name = false; // and this is needed to reject the names with non-alphabet characters
           break;
-        } else {
-            valid_name = true
-        }
+        } 
+        // else { - don't think this else was needed
+        //     valid_name = true - this was causing the names with special characters to be accepted incorrectly
+        //   }
       }
     }
     userName = userName.charAt(0).toUpperCase() + userName.slice(1);
