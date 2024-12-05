@@ -28,7 +28,7 @@ while (weapon !== "1" && weapon !== "2" && weapon !== "3") {
     "Choose your weapon:  1. Rock, 2. Paper, 3. Scissors. Type the number to make your choice."
   );
 
-  if (weapon != "1" && "2" && "3") {
+  if (weapon !== "1" && weapon !== "2" && weapon !== "3") {
     alert("Incorrect! Please select a weapon between 1 and 3");
   }
 }
