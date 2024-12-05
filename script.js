@@ -6,21 +6,32 @@ function greet() {
 }
 
 let userName = greet();
-console.log("Hello, " + userName + "!");
+alert("Hello, " + userName + "!");
 
 //let response = prompt("Would you like to read the guide?");
 //if (response === "yes" || response === "Yes") {
 // console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
-//}
+//
 
 let response = confirm("Would you like to read the guide?"); // leaves less room for user error in
-console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
-if (response === "yes" || response === "Yes")
-  console.log("Rock beats scissors, Scissors beats paper, Paper beats rock");
+if (response) {
+  alert(
+    "Choose a weapon on the following screen to beat the computer. Rock beats scissors, scissors beats paper, paper beats rock. Good luck!"
+  );
+} else {
+  alert("Good luck!");
+}
 
-let weapon = prompt(
-  "Choose your weapon:  1. Rock, 2. Paper, 3. Scissors. Type the number to make your choice"
-);
+let weapon;
+while (weapon !== "1" && weapon !== "2" && weapon !== "3") {
+  weapon = prompt(
+    "Choose your weapon:  1. Rock, 2. Paper, 3. Scissors. Type the number to make your choice."
+  );
+
+  if (weapon != "1" && "2" && "3") {
+    alert("Incorrect! Please select a weapon between 1 and 3");
+  }
+}
 
 if (weapon === "1") {
   alert("You chose Rock!");
@@ -28,8 +39,6 @@ if (weapon === "1") {
   alert("You chose Paper!");
 } else if (weapon === "3") {
   alert("You chose Scissors!");
-} else {
-  alert("Invalid choice. Please refresh and try again.");
 }
 
 function randomComputer() {
